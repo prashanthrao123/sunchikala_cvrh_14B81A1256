@@ -1,3 +1,4 @@
+package epam;
 import java.util.Date;
 import java.util.*;
 import java.lang.*;
@@ -56,7 +57,7 @@ public class StudentGroup implements StudentArrayOperation {
                     throw new IllegalArgumentException();
                 else {
 					int j = len;
-                    for(i=len;i<students.length;++i){
+                    for(i=0;i<students.length;++i){
                         this.students[j] = students[i];
 						j++;
                     }
