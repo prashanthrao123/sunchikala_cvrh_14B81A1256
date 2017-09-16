@@ -1,3 +1,6 @@
+package epam;
+
+
 import java.util.Date;
 import java.util.*;
 import java.lang.*;
@@ -17,7 +20,7 @@ import java.lang.*;
 public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
-        int len = 0;
+    int len = 0;
 	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
@@ -28,8 +31,23 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getStudents() {
-            if(len != 0 )
-                return students;
+            if(len != 0 ){
+            	 ArrayList<Student> sl = new ArrayList<Student>();
+  			   int i = 0;
+  			   for(i=0;i<len;++i){
+  					sl.add(students[i]);
+  			   }
+  			   
+  			   int k = 0;
+  				  Student bstud[] = new Student[sl.size()];
+  				  
+  				  for(Student s:sl){
+  					  bstud[k]  = s;
+  					  k++;
+  				  }
+  				  
+  				  return bstud;
+            }  
             else return null;
 	}
 
