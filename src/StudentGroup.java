@@ -28,8 +28,24 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getStudents() {
-            if(len != 0 )
-                return students;
+            if(len != 0 ){
+				ArrayList<Student> sl = new ArrayList<Student>();
+  			   int i = 0;
+  			   for(i=0;i<len;++i){
+  					sl.add(students[i]);
+  			   }
+  			   
+  			   int k = 0;
+  				  Student bstud[] = new Student[sl.size()];
+  				  
+  				  for(Student s:sl){
+  					  bstud[k]  = s;
+  					  k++;
+ 				  }
+				  
+				  return bstud;
+			}
+                
             else return null;
 	}
 
