@@ -50,7 +50,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student getStudent(int index) {
-		if(index >= students.length || index < 0 ){
+		if(index >= len || index < 0 ){
                     throw new IllegalArgumentException();
 		}
 		else{
@@ -63,12 +63,12 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudent(Student student, int index) {
 		if(student == null || index<0 || index>=len){
-                        throw new IllegalArgumentException();
+                  throw new IllegalArgumentException();
 		}
 		else{
                      students[index]=student;
 		}
-        }
+    }
 
 	@Override
 	public void addFirst(Student student) {
@@ -264,7 +264,7 @@ public class StudentGroup implements StudentArrayOperation {
 		  ArrayList<Student> sl = new ArrayList<Student>();
 		  
 		  for(i=0;i<len;++i){
-			  if(students[i].getBirthDate().after(firstDate) || students[i].getBirthDate().equals(firstDate) && students[i].getBirthDate().before(lastDate) ||students[i].getBirthDate().equals(lastDate)){
+			  if((students[i].getBirthDate().after(firstDate) || students[i].getBirthDate().equals(firstDate)) && (students[i].getBirthDate().before(lastDate) ||students[i].getBirthDate().equals(lastDate))){
 				    sl.add(students[i]);
 			  }
 		  }
