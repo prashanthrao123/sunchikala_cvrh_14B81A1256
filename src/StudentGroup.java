@@ -93,7 +93,7 @@ public class StudentGroup implements StudentArrayOperation {
              if (student == null)
                  throw new IllegalArgumentException();
              int i =0;
-             for(i=len;i > 0;--i){
+             for(i= 0;i > 0;--i){
                  students[i]  = students[i-1];
              }
              students[0] = student;
