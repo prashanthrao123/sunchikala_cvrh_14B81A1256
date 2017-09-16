@@ -3,7 +3,7 @@ package epam;
 
 import java.util.Date;
 import java.util.*;
-import java.lang.*;
+
 
 
 /**
@@ -32,7 +32,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudents() {
             if(len != 0 ){
-            	 ArrayList<Student> sl = new ArrayList<Student>();
+               ArrayList<Student> sl = new ArrayList<Student>();
   			   int i = 0;
   			   for(i=0;i<len;++i){
   					sl.add(students[i]);
@@ -48,7 +48,8 @@ public class StudentGroup implements StudentArrayOperation {
   				  
   				  return bstud;
             }  
-            else return null;
+            else 
+            	return null;
 	}
 
 	@Override
@@ -305,12 +306,12 @@ public class StudentGroup implements StudentArrayOperation {
 		 int i =0;
 		  ArrayList<Student> sl = new ArrayList<Student>();
 		  
-		  for(i=0;i<len;++i){
+		 /* for(i=0;i<len;++i){
 			  long diff = date.getTime() - date.getTime();
 			  if(students[i].getBirthDate().after(date) && days == 4){
 				    sl.add(students[i]);
 			  }
-		  }
+		  }  */
 		  
 		  int k = 0;
 		  Student bstud[] = new Student[sl.size()];
@@ -374,15 +375,16 @@ public class StudentGroup implements StudentArrayOperation {
 			avg = avg + students[i].getAvgMark();
 		}
 		avg = avg/len;
+		ArrayList<Student> sl = new ArrayList<Student>();
 		
 		for(i=0;i<len;++i){
-			ArrayList<Student> sl = new ArrayList<Student>();
 			    i = 0;
 			   for(i=0;i<len;++i){
 				   if(avg == students[i].getAvgMark()){
 					   sl.add(students[i]);
 				   }
 			   }
+		}
 			   
 			   int k = 0;
 				  Student bstud[] = new Student[sl.size()];
@@ -394,8 +396,6 @@ public class StudentGroup implements StudentArrayOperation {
 				  
 				  return bstud;
 
-		}
-		return null;
 	}
 
 	@Override
