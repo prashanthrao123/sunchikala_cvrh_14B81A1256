@@ -1,4 +1,3 @@
-package epam;
 import java.util.Date;
 import java.util.*;
 import java.lang.*;
