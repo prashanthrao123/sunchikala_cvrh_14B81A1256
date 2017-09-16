@@ -39,10 +39,11 @@ public class StudentGroup implements StudentArrayOperation {
 		if(students == null)
                     throw new IllegalArgumentException();
                 else {
-                    for(i=len;i<students.length;++i){
-                        this.students[i] = students[i];
+                	int j = len;
+                    for(i=0;i<students.length;++i){
+                        this.students[j] = students[i];
                     }
-                    len = len +students.length;
+                    len = len + students.length;
                 }
 	}
 
@@ -55,14 +56,14 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 		else{
                     return students[index];
-                }
+             }
 	}
 
 
 
 	@Override
 	public void setStudent(Student student, int index) {
-		if(student == null || index<0 || index>=len){
+		if(student == null || index < 0 || index >= len){
                   throw new IllegalArgumentException();
 		}
 		else{
@@ -92,7 +93,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void add(Student student, int index) {
-		if(student == null || index<0 || index>= len){
+		if(student == null || index<0 || index >= len){
                         throw new IllegalArgumentException();
 		}
 		else{
