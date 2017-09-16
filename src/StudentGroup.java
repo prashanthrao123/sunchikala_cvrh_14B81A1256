@@ -39,8 +39,10 @@ public class StudentGroup implements StudentArrayOperation {
 		if(students == null)
                     throw new IllegalArgumentException();
                 else {
+					int j = len;
                     for(i=len;i<students.length;++i){
-                        this.students[i] = students[i];
+                        this.students[j] = students[i];
+						j++;
                     }
                     len = len +students.length;
                 }
