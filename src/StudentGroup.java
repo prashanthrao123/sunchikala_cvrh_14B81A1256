@@ -1,4 +1,3 @@
-package epam;
 import java.util.Date;
 import java.util.*;
 import java.lang.*;
@@ -51,7 +50,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student getStudent(int index) {
-		if(index >= len || index < 0 ){
+		if(index >= students.length || index < 0 ){
                     throw new IllegalArgumentException();
 		}
 		else{
@@ -63,7 +62,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void setStudent(Student student, int index) {
-		if(student == null || index<0 || index >= len){
+		if(student == null || index<0 || index>=len){
                         throw new IllegalArgumentException();
 		}
 		else{
@@ -112,7 +111,7 @@ public class StudentGroup implements StudentArrayOperation {
 		if(index < 0 || index >= len){
                    throw new IllegalArgumentException();
                 }
-        else{
+                else{
                     for(i= index;i<len-1;++i){
                         students[i] = students[i+1];
                     }
@@ -124,7 +123,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(Student student) {
 		if( student == null)
-                throw new IllegalArgumentException();
+                    throw new IllegalArgumentException();
                 int i = 0;
                 for(i=0;i<len;++i){
                     if(students[i].getId() == student.getId()  &&  students[i].getFullName().equals(student.getFullName()) && students[i].getAvgMark() == student.getAvgMark() && students[i].getBirthDate().compareTo(student.getBirthDate()) == 0){
@@ -215,7 +214,8 @@ public class StudentGroup implements StudentArrayOperation {
 	public void bubbleSort() {
 		int i =0,j= 0;
 		
-		for(i = 0;i<len-1;++i){
+		for(i = 0;i<len;++i){
+			
 			for(j=len-1;j >=i;j--){
 				if(students[j].getId() < students[j-1].getId()){
 					Student temp = students[j-1];
@@ -264,7 +264,7 @@ public class StudentGroup implements StudentArrayOperation {
 		  ArrayList<Student> sl = new ArrayList<Student>();
 		  
 		  for(i=0;i<len;++i){
-			  if((students[i].getBirthDate().after(firstDate) || students[i].getBirthDate().equals(firstDate)) && (students[i].getBirthDate().before(lastDate) ||students[i].getBirthDate().equals(lastDate))){
+			  if(students[i].getBirthDate().after(firstDate) || students[i].getBirthDate().equals(firstDate) && students[i].getBirthDate().before(lastDate) ||students[i].getBirthDate().equals(lastDate)){
 				    sl.add(students[i]);
 			  }
 		  }
